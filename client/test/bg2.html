@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .carbon-emissions-section {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          min-height: 1080px;
+          width: 100%;
+          font-family: League Spartan, sans-serif;
+          color: #fff;
+          font-weight: 400;
+          padding: 61px 58px;
+        }
+        
+        @media (max-width: 991px) {
+          .carbon-emissions-section {
+            max-width: 100%;
+            padding: 0 20px;
+          }
+        }
+        
+        .background-image {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        
+        .info-card {
+          position: relative;
+          border-radius: 49px;
+          background-color: rgba(152, 93, 93, 0.33);
+          align-self: end;
+          display: flex;
+          width: 694px;
+          max-width: 100%;
+          flex-direction: column;
+          align-items: center;
+          padding: 49px 59px;
+        }
+        
+        @media (max-width: 991px) {
+          .info-card {
+            padding: 0 20px;
+          }
+        }
+        
+        .card-title {
+          font-size: 58px;
+          text-align: center;
+        }
+        
+        @media (max-width: 991px) {
+          .card-title {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        }
+        
+        .card-description {
+          font-size: 28px;
+          align-self: stretch;
+          margin-top: 28px;
+        }
+        
+        @media (max-width: 991px) {
+          .card-description {
+            max-width: 100%;
+          }
+        }
+        
+        .cta-button {
+          align-self: stretch;
+          border-radius: 8px;
+          background-color: rgba(243, 233, 233, 0.73);
+          margin-top: 56px;
+          min-height: 56px;
+          width: 254px;
+          max-width: 100%;
+          overflow: hidden;
+          color: var(--sds-color-text-brand-on-brand);
+          letter-spacing: 0;
+          padding: 10px 12px;
+          font: 28px/36px Roboto, sans-serif;
+          border: 1px solid #f5f5f5;
+        }
+        
+        @media (max-width: 991px) {
+          .cta-button {
+            margin-top: 40px;
+          }
+        }
+        
+        .timeline-card {
+          position: relative;
+          border-radius: 49px;
+          background-color: rgba(152, 93, 93, 0.33);
+          display: flex;
+          margin-top: 229px;
+          width: 694px;
+          max-width: 100%;
+          flex-direction: column;
+          padding: 38px 43px;
+        }
+        
+        @media (max-width: 991px) {
+          .timeline-card {
+            margin-top: 40px;
+            padding: 0 20px;
+          }
+        }
+        
+        .timeline-title {
+          font-size: 58px;
+          text-align: center;
+        }
+        
+        @media (max-width: 991px) {
+          .timeline-title {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        }
+        
+        .timeline-description {
+          font-size: 28px;
+          margin: 20px 10px 0 0;
+        }
+        
+        @media (max-width: 991px) {
+          .timeline-description {
+            max-width: 100%;
+          }
+        }
+        
+        .timeline-button {
+          align-self: center;
+          border-radius: 8px;
+          background-color: rgba(243, 233, 233, 0.73);
+          margin-top: 58px;
+          min-height: 56px;
+          width: 254px;
+          max-width: 100%;
+          overflow: hidden;
+          color: var(--sds-color-text-brand-on-brand);
+          letter-spacing: 0;
+          padding: 10px 12px;
+          font: 28px/36px Roboto, sans-serif;
+          border: 1px solid #f5f5f5;
+        }
+        
+        @media (max-width: 991px) {
+          .timeline-button {
+            margin-top: 40px;
+          }
+        }
+        
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+        </style>
+        
+        <section class="carbon-emissions-section">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/77e5374e4898c6d98541ce89126a19fbf2bc9f44e9f125fb30a3d06214ec8b47?placeholderIfAbsent=true&apiKey=ca50078de52f4a899ab7e2a421a65d3f" alt="" class="background-image" />
+          <article class="info-card">
+            <h2 class="card-title">Interactive Heatmap</h2>
+            <p class="card-description">Explore our interactive heatmap to see how carbon emissions vary across the globe. Dive into data by region and see the big picture.</p>
+            <button class="cta-button">See Heatmap</button>
+          </article>
+          <article class="timeline-card">
+            <h2 class="timeline-title">Travel Through Time: The Carbon Emissions Journey</h2>
+            <p class="timeline-description">Discover key moments in our carbon history and how we can change the future.</p>
+            <button class="timeline-button">Start your journey</button>
+          </article>
+        </section>
+</body>
+</html>
