@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import HeatMap1 from "./components/Heatmap1";
+import HeatMap2 from "./components/Heatmap2";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Simple Maps Heatmap</h1>
+      <HeatMap1 />
+      <h2 style={{ marginTop: "2rem" }}>React Simple Maps Heatmap with Markers</h2>
+      <HeatMap2 />
+      
     </div>
   );
 }
-
-export default App;
