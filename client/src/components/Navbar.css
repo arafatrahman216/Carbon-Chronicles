@@ -1,0 +1,46 @@
+.navbar-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  background-color: rgba(24, 24, 18, 0.78);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 100%;
+  align-items: start;
+  gap: 40px 50px;
+  color: #acffe6;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 15px 30px 30px 30px;
+}
+
+.logo {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 48px;
+}
+
+.brand-name {
+  align-self: left;
+  width: 30%;
+  font: 40px League Spartan, sans-serif;
+}
+
+.nav-menu {
+  display: flex;
+  margin-top: 9px;
+  gap: 30px 40px;
+  font: 20px Inter, sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit; /* Optionally, you can retain the default text color */
+  }
