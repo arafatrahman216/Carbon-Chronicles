@@ -5,19 +5,35 @@ const CarbonFootprint = () => {
     const [bodyType, setBodyType] = useState('');
     const [gender, setGender] = useState('');
     const [heatingEnergySource, setHeatingEnergySource] = useState('');
+    const [carbon_emission_result, setCarbonEmissionResult] = useState(0);
+    const calculateBMI = (weight, height) => {
+        const bmi = weight / (height * height);
+        if (bmi < 18.5) return 'underweight';
+        if (bmi >= 18.5 && bmi < 24.9) return 'normal';
+        if (bmi >= 25 && bmi < 29.9) return 'overweight';
+        return 'obese';
+    };
+
+    const [weight, setWeight] = useState(0);
+    const [height, setHeight] = useState(0);
+
+    const handleCalculateBMI = () => {
+        const bmiCategory = calculateBMI(weight, height);
+        setBodyType(bmiCategory);
+    };
     const [showerFrequency, setShowerFrequency] = useState('');
     const [diet, setDiet] = useState('');
     const [transport, setTransport] = useState('');
-    const [bagelType, setBagelType] = useState('');
+    const [wasteBagCount, setWasteBagCount] = useState(0);
     const [socialActivity, setSocialActivity] = useState('');
-    const [monthlyGrocery, setMonthlyGrocery] = useState('');
+    const [monthlyGrocery, setMonthlyGrocery] = useState(0);
     const [travelFrequency, setTravelFrequency] = useState('');
     const [vehicleType, setVehicleType] = useState('');
-    const [monthlyDistance, setMonthlyDistance] = useState('');
+    const [monthlyDistance, setMonthlyDistance] = useState(0);
     const [wasteBagSize, setWasteBagSize] = useState('');
-    const [pcTvUsage, setPcTvUsage] = useState('');
-    const [newClothesMonthly, setNewClothesMonthly] = useState('');
-    const [internetUsageDaily, setInternetUsageDaily] = useState('');
+    const [pcTvUsage, setPcTvUsage] = useState(0);
+    const [newClothesMonthly, setNewClothesMonthly] = useState(0);
+    const [internetUsageDaily, setInternetUsageDaily] = useState(0);
     const [energyEfficiency, setEnergyEfficiency] = useState('');
     const [recycling, setRecycling] = useState('');
     const [cookingMaterials, setCookingMaterials] = useState('');
@@ -30,7 +46,7 @@ const CarbonFootprint = () => {
             showerFrequency,
             diet,
             transport,
-            bagelType,
+            wasteBagCount,
             socialActivity,
             monthlyGrocery,
             travelFrequency,
@@ -52,17 +68,34 @@ const CarbonFootprint = () => {
         <div className='calculator-box'>
             <h1>Carbon Footprint Calculator</h1>
             <label>
-                Body Type:
+                Weight (kg): 
+                <input
+                    type="number"
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                />
+            </label>
+            <label>
+                Height (m): 
+                <input
+                    type="number"
+                    value={height}
+                    onChange={(e) => setHeight(e.target.value)}
+                />
+            </label>
+            <button onClick={handleCalculateBMI}>Calculate BMI</button>
+            <label>
+                Body Type: 
                 <select value={bodyType} onChange={(e) => setBodyType(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="truck">Truck</option>
-                    <option value="motorcycle">Motorcycle</option>
+                    <option value="underweight">Underweight</option>
+                    <option value="normal">Normal</option>
+                    <option value="overweight">Overweight</option>
+                    <option value="obese">Obese</option>
                 </select>
             </label>
             <label>
-                Gender:
+                Gender: 
                 <select value={gender} onChange={(e) => setGender(e.target.value)}>
                     <option value="">Select</option>
                     <option value="male">Male</option>
@@ -70,43 +103,77 @@ const CarbonFootprint = () => {
                 </select>
             </label>
             <label>
-                Heating Energy Source:
+                Heating Energy Source: 
                 <select value={heatingEnergySource} onChange={(e) => setHeatingEnergySource(e.target.value)}>
                     <option value="">Select</option>
                     <option value="electricity">Electricity</option>
-                    <option value="gas">Gas</option>
+                    <option value="natural gas">Gas</option>
                     <option value="wood">Wood</option>
+                    <option value="coal">Coal</option>
                 </select>
             </label>
             <label>
-                Shower Frequency:
+                Shower Frequency: 
                 <select value={showerFrequency} onChange={(e) => setShowerFrequency(e.target.value)}>
                     <option value="">Select</option>
                     <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
+                    <option value="less frequently">Less frequently</option>
+                    <option value="more frequently">More frequently</option>
+                    <option value="twice a day">Twice a day</option>
                 </select>
             </label>
             <label>
-                Diet:
+                Diet: 
                 <select value={diet} onChange={(e) => setDiet(e.target.value)}>
                     <option value="">Select</option>
                     <option value="vegan">Vegan</option>
                     <option value="vegetarian">Vegetarian</option>
                     <option value="omnivore">Omnivore</option>
+                    <option value="pescatarian">Pescatarian</option>
                 </select>
             </label>
             <label>
-                Transport:
+                Transport: 
                 <select value={transport} onChange={(e) => setTransport(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="car">Car</option>
-                    <option value="bike">Bike</option>
+                    <option value="private">Private</option>
+                    <option value="walk/bicycle">Walk/Bicycle</option>
                     <option value="public">Public Transport</option>
                 </select>
             </label>
+
             <label>
-                Waste Bag Size:
+                Vehicle Type:
+                <select value={vehicleType} onChange={(e) => setVehicleType(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="lpg">LPG</option>
+                </select>
+            </label>
+            <label>
+                Vehicles Monthly Distance:
+                <input type="number" value={monthlyDistance} onChange={(e) => setMonthlyDistance(e.target.value)} />
+            </label>
+
+
+            <label>
+                Social Activity:
+                <select value={socialActivity} onChange={(e) => setSocialActivity(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="often">Often</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="never">Never</option>
+                </select>
+            </label>
+            <label>
+                Monthly Grocery bill :
+                <input type="number" value={monthlyGrocery} onChange={(e) => setMonthlyGrocery(e.target.value)} />
+            </label>
+            <label>
+                Waste Bag Size: 
                 <select value={wasteBagSize} onChange={(e) => setWasteBagSize(e.target.value)}>
                     <option value="">Select</option>
                     <option value="small">Small</option>
@@ -115,60 +182,204 @@ const CarbonFootprint = () => {
                 </select>
             </label>
             <label>
-                PC/TV Usage:
-                <select value={pcTvUsage} onChange={(e) => setPcTvUsage(e.target.value)}>
+                Air Travel Frequency:
+                <select value={travelFrequency} onChange={(e) => setTravelFrequency(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="never">Never</option>
+                    <option value="rarely">Rarely</option>
+                    <option value="frequency">Frequently</option>
+                    <option value="very frequently">Very Frequently</option>
                 </select>
             </label>
             <label>
-                New Clothes Monthly:
-                <select value={newClothesMonthly} onChange={(e) => setNewClothesMonthly(e.target.value)}>
-                    <option value="">Select</option>
-                    <option value="none">None</option>
-                    <option value="few">Few</option>
-                    <option value="many">Many</option>
-                </select>
+                Weekly Waste Bag count :
+                <input type="number" value={wasteBagCount} onChange={(e) => setWasteBagCount(e.target.value)} />
+            </label>
+
+
+            <label>
+                PC/TV Usage: 
+                <input type="number" value={pcTvUsage} onChange={(e) => setPcTvUsage(e.target.value)} />
             </label>
             <label>
-                Internet Usage Daily:
-                <select value={internetUsageDaily} onChange={(e) => setInternetUsageDaily(e.target.value)}>
-                    <option value="">Select</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
+                New Clothes Monthly: 
+                <input type="number" value={newClothesMonthly} onChange={(e) => setNewClothesMonthly(e.target.value)} />
             </label>
             <label>
-                Energy Efficiency:
+                Internet Usage Daily: 
+                <input type="number" value={internetUsageDaily} onChange={(e) => setInternetUsageDaily(e.target.value)} />
+            hour</label>
+            <label>
+                Energy Efficiency: 
                 <select value={energyEfficiency} onChange={(e) => setEnergyEfficiency(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="no">No</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="yes">Yes</option>
                 </select>
             </label>
             <label>
-                Recycling:
-                <select value={recycling} onChange={(e) => setRecycling(e.target.value)}>
-                    <option value="">Select</option>
-                    <option value="none">None</option>
-                    <option value="some">Some</option>
-                    <option value="all">All</option>
-                </select>
+                Recycling: 
+                <div>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="metal"
+                            checked={recycling.includes('metal')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setRecycling((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Metal
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="paper"
+                            checked={recycling.includes('paper')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setRecycling((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Paper
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="plastic"
+                            checked={recycling.includes('plastic')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setRecycling((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Plastic
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="glass"
+                            checked={recycling.includes('glass')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setRecycling((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Glass
+                    </label>
+                </div>
+
             </label>
             <label>
-                Cooking Materials:
-                <select value={cookingMaterials} onChange={(e) => setCookingMaterials(e.target.value)}>
-                    <option value="">Select</option>
-                    <option value="electric">Electric</option>
-                    <option value="gas">Gas</option>
-                    <option value="wood">Wood</option>
-                </select>
+                Cooking Materials: 
+                <div>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="stove"
+                            checked={cookingMaterials.includes('stove')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setCookingMaterials((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Stove
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="oven"
+                            checked={cookingMaterials.includes('oven')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setCookingMaterials((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Oven
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="microwave"
+                            checked={cookingMaterials.includes('microwave')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setCookingMaterials((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Microwave
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="grill"
+                            checked={cookingMaterials.includes('grill')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setCookingMaterials((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Grill
+                    </label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            value="airfryer"
+                            checked={cookingMaterials.includes('airfryer')}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                setCookingMaterials((prev) =>
+                                    prev.includes(value)
+                                        ? prev.filter((item) => item !== value)
+                                        : [...prev, value]
+                                );
+                            }}
+                        />
+                        Airfryer
+                    </label>
+                </div>
             </label>
             <button onClick={submitData}>Submit</button>
+
+            <div className='result-box'>
+                <h2>Carbon Footprint: {carbon_emission_result}</h2>
+
+            </div>
+
         </div>
     );
 };
