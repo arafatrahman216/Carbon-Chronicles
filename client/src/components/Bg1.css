@@ -5,7 +5,7 @@
     padding-bottom: 30px;
     color: #fff;
     font-weight: 400;
-    margin-top: 100px;
+    margin-top: 4%;
   }
   
   .hero-background {
@@ -29,16 +29,17 @@
     font-family: League Spartan, sans-serif;
     margin-left: 41rem;
     margin-right: 50px;
+    margin-top: 0px;
     padding: 38px 29px;
   }
   
   .hero-title {
-    font-size: 58px;
+    font-size: 50px;
     text-align: center;
   }
   
   .hero-description {
-    font-size: 30px;
+    font-size: 20px;
     margin: 31px 18px 0 16px;
   }
   
@@ -73,12 +74,12 @@
   }
   
   .feature-title {
-    font-size: 58px;
+    font-size: 40px;
     text-align: center;
   }
   
   .feature-description {
-    font-size: 28px;
+    font-size: 20px;
     margin: 20px 10px 0 11px;
   }
   
@@ -101,61 +102,4 @@
     text-decoration: none;
   }
   
-  @media (max-width: 991px) {
-    .hero-section {
-      max-width: 100%;
-      margin-top: 40px;
-    }
   
-    .header {
-      max-width: 100%;
-      padding-right: 20px;
-    }
-  
-    .brand-name {
-      max-width: 100%;
-      font-size: 40px;
-    }
-  
-    .nav-menu {
-      max-width: 100%;
-    }
-  
-    .hero-content {
-      margin-right: 10px;
-      padding: 0 20px;
-    }
-  
-    .hero-title {
-      max-width: 100%;
-      font-size: 40px;
-    }
-  
-    .hero-description {
-      max-width: 100%;
-      margin-right: 10px;
-    }
-  
-    .cta-button {
-      margin-top: 40px;
-      white-space: initial;
-    }
-  
-    .feature-content {
-      margin-top: 40px;
-      padding: 0 20px;
-    }
-  
-    .feature-title {
-      max-width: 100%;
-      font-size: 40px;
-    }
-  
-    .feature-description {
-      max-width: 100%;
-    }
-  
-    .feature-button {
-      margin-top: 40px;
-    }
-  }
