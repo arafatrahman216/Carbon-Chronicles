@@ -5,19 +5,20 @@ import Navbar from './components/Navbar';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Home from './components/Home';
 import CarbonFootprint from "./components/CarbonFootprint";
+import Navbar2 from "./components/Navbar2";
 
 export default function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar2 />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/calculator" element={<CarbonFootprint />}/>
           {/* <Route path='/calculator' element={}/>
           <Route path='/explore' element={}/>
           <Route path='/heatmap' element={}/>
-          <Route path='/join' element={}/> */}
+          <Route path='/joinus' element={}/> */}
         </Routes>
       </div>
       <h1>React Simple Maps Heatmap</h1>
