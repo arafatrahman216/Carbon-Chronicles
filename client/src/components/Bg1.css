@@ -27,15 +27,27 @@
     max-width: 100%;
     flex-direction: column;
     font-family: League Spartan, sans-serif;
-    margin-left: 41rem;
-    margin-right: 50px;
+    margin-left: 40%;
+    margin-right: 10%;
     margin-top: 0px;
     padding: 38px 29px;
+  }
+
+  @media (max-width: 991px) {
+    .hero-content {
+      padding: 0 20px;
+    }
   }
   
   .hero-title {
     font-size: 50px;
     text-align: center;
+  }
+
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 40px;
+    }
   }
   
   .hero-description {
@@ -58,6 +70,13 @@
     border: 1px solid #f5f5f5;
     text-align: center;
     text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    .cta-button-1 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
   
   .feature-content {
