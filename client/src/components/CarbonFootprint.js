@@ -60,6 +60,21 @@ const CarbonFootprint = () => {
             recycling,
             cookingMaterials
         };
+        fetch("http://127.0.0.1:8000/get-data/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setCarbonEmissionResult(data.carbon_emission_result);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            }
+        )
         // Call the API with the data
         console.log(data);
     };
@@ -224,8 +239,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="metal"
-                            checked={recycling.includes('metal')}
+                            value="Metal"
+                            checked={recycling.includes('Metal')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setRecycling((prev) =>
@@ -240,8 +255,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="paper"
-                            checked={recycling.includes('paper')}
+                            value="Paper"
+                            checked={recycling.includes('Paper')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setRecycling((prev) =>
@@ -256,8 +271,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="plastic"
-                            checked={recycling.includes('plastic')}
+                            value="Plastic"
+                            checked={recycling.includes('Plastic')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setRecycling((prev) =>
@@ -272,8 +287,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="glass"
-                            checked={recycling.includes('glass')}
+                            value="Glass"
+                            checked={recycling.includes('Glass')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setRecycling((prev) =>
@@ -294,8 +309,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="stove"
-                            checked={cookingMaterials.includes('stove')}
+                            value="Stove"
+                            checked={cookingMaterials.includes('Stove')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setCookingMaterials((prev) =>
@@ -310,8 +325,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="oven"
-                            checked={cookingMaterials.includes('oven')}
+                            value="Oven"
+                            checked={cookingMaterials.includes('Oven')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setCookingMaterials((prev) =>
@@ -326,8 +341,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="microwave"
-                            checked={cookingMaterials.includes('microwave')}
+                            value="Microwave"
+                            checked={cookingMaterials.includes('Microwave')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setCookingMaterials((prev) =>
@@ -342,8 +357,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="grill"
-                            checked={cookingMaterials.includes('grill')}
+                            value="Grill"
+                            checked={cookingMaterials.includes('Grill')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setCookingMaterials((prev) =>
@@ -358,8 +373,8 @@ const CarbonFootprint = () => {
                     <label>
                         <input
                             type="checkbox"
-                            value="airfryer"
-                            checked={cookingMaterials.includes('airfryer')}
+                            value="Airfryer"
+                            checked={cookingMaterials.includes('Airfryer')}
                             onChange={(e) => {
                                 const value = e.target.value;
                                 setCookingMaterials((prev) =>

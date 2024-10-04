@@ -1,3 +1,2 @@
-Nasa Space App Challenge 2024
-Team Climate Steller
-Project Carbon Chronicles
+https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_cba_surface-flask_1_ccgg_month.txt   Cold Bay, Alaska, United States (CBA)
+https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_bal_surface-flask_1_ccgg_month.txt   Baltic Sea, Poland (BAL)
