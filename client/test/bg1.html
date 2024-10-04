@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .hero-section {
+          position: relative;
+          min-height: 1080px;
+          margin-top: 18px;
+          width: 100%;
+          padding-bottom: 18px;
+          color: #fff;
+          font-weight: 400;
+        }
+        
+        .hero-background {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        
+        .header {
+          position: relative;
+          border-radius: 0 0 10px 10px;
+          background-color: rgba(28, 28, 36, 0.78);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          display: flex;
+          width: 100%;
+          align-items: start;
+          gap: 40px 100px;
+          color: #acffe6;
+          text-align: center;
+          flex-wrap: wrap;
+          padding: 20px 80px 34px 20px;
+        }
+        
+        .logo {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 48px;
+        }
+        
+        .brand-name {
+          align-self: stretch;
+          flex-grow: 1;
+          width: 423px;
+          font: 58px League Spartan, sans-serif;
+        }
+        
+        .nav-menu {
+          display: flex;
+          margin-top: 9px;
+          gap: 40px 51px;
+          font: 30px Inter, sans-serif;
+        }
+        
+        .hero-content {
+          position: relative;
+          border-radius: 49px;
+          background-color: rgba(152, 93, 93, 0.33);
+          align-self: end;
+          display: flex;
+          width: 694px;
+          max-width: 100%;
+          flex-direction: column;
+          font-family: League Spartan, sans-serif;
+          margin: 39px 77px 0 0;
+          padding: 38px 29px;
+        }
+        
+        .hero-title {
+          font-size: 58px;
+          text-align: center;
+        }
+        
+        .hero-description {
+          font-size: 30px;
+          margin: 31px 18px 0 16px;
+        }
+        
+        .cta-button {
+          align-self: center;
+          border-radius: 8px;
+          background-color: rgba(243, 233, 233, 0.73);
+          margin-top: 54px;
+          min-height: 56px;
+          width: 184px;
+          max-width: 100%;
+          gap: 8px;
+          overflow: hidden;
+          color: var(--sds-color-text-brand-on-brand);
+          white-space: nowrap;
+          letter-spacing: var(--Headline-Small-Tracking, 0px);
+          padding: 10px 12px;
+          font: var(--Headline-Medium-Size, 28px) / var(--Headline-Medium-Line-Height, 36px) var(--Headline-Medium-Font, Roboto);
+          border: 1px solid #f5f5f5;
+        }
+        
+        .feature-content {
+          position: relative;
+          border-radius: 49px;
+          background-color: rgba(152, 93, 93, 0.72);
+          display: flex;
+          width: 694px;
+          max-width: 100%;
+          flex-direction: column;
+          font-family: League Spartan, sans-serif;
+          margin: 182px 0 0 45px;
+          padding: 48px 38px;
+        }
+        
+        .feature-title {
+          font-size: 58px;
+          text-align: center;
+        }
+        
+        .feature-description {
+          font-size: 28px;
+          margin: 20px 10px 0 11px;
+        }
+        
+        .feature-button {
+          align-self: center;
+          border-radius: 8px;
+          background-color: rgba(87, 230, 144, 0.98);
+          margin-top: 45px;
+          min-height: 60px;
+          width: 261px;
+          max-width: 100%;
+          gap: 8px;
+          overflow: hidden;
+          color: var(--sds-color-text-brand-on-brand);
+          letter-spacing: var(--Headline-Small-Tracking, 0px);
+          padding: 12px;
+          font: var(--Headline-Medium-Size, 28px) / var(--Headline-Medium-Line-Height, 36px) var(--Headline-Medium-Font, Roboto);
+          border: 1px solid #f5f5f5;
+        }
+        
+        @media (max-width: 991px) {
+          .hero-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        
+          .header {
+            max-width: 100%;
+            padding-right: 20px;
+          }
+        
+          .brand-name {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        
+          .nav-menu {
+            max-width: 100%;
+          }
+        
+          .hero-content {
+            margin-right: 10px;
+            padding: 0 20px;
+          }
+        
+          .hero-title {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        
+          .hero-description {
+            max-width: 100%;
+            margin-right: 10px;
+          }
+        
+          .cta-button {
+            margin-top: 40px;
+            white-space: initial;
+          }
+        
+          .feature-content {
+            margin-top: 40px;
+            padding: 0 20px;
+          }
+        
+          .feature-title {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        
+          .feature-description {
+            max-width: 100%;
+          }
+        
+          .feature-button {
+            margin-top: 40px;
+          }
+        }
+        </style>
+        
+        <section class="hero-section">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/417993d2b3ea0e5d58a9e2e9a973b9caee571092d405b5e7de3d04f14a9b6bd2?placeholderIfAbsent=true&apiKey=ca50078de52f4a899ab7e2a421a65d3f" alt="" class="hero-background" />
+          
+          <header class="header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/efda1b2678a23eac5492c620715cf8734a23c2dd5cfd991e97f14edea0d743d4?placeholderIfAbsent=true&apiKey=ca50078de52f4a899ab7e2a421a65d3f" alt="Carbon Chronicles Logo" class="logo" />
+            <h1 class="brand-name">Carbon Chronicles</h1>
+            <nav class="nav-menu">
+              <a href="#home">Home</a>
+              <a href="#calculator">Calculator</a>
+              <a href="#explore">Explore</a>
+              <a href="#heatmap">HeatMap</a>
+              <a href="#join">Join Us</a>
+            </nav>
+          </header>
+          
+          <div class="hero-content">
+            <h2 class="hero-title">Track, Learn, and Act for a Sustainable Future</h2>
+            <p class="hero-description">Empowering you to reduce your carbon footprint with data-driven tools and powerful stories.</p>
+            <a href="#explore" class="cta-button">Explore</a>
+          </div>
+          
+          <div class="feature-content">
+            <h2 class="feature-title">Track Your Carbon Impact, Visualize Your Journey</h2>
+            <p class="feature-description">Discover your carbon footprint, explore data visually, and dive into a sustainable future.</p>
+            <a href="#calculate" class="feature-button">Calculate Footprint</a>
+          </div>
+        </section>
+</body>
+</html>

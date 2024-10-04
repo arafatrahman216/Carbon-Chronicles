@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar-header {
+            margin-bottom: 30px;
+        }
+        .sidebar-logo {
+            width: 120px;
+            height: auto;
+        }
+        .sidebar-nav {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar-nav-item {
+            margin-bottom: 20px;
+        }
+        .sidebar-nav-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .sidebar-nav-link:hover,
+        .sidebar-nav-link:focus {
+            color: #007bff;
+        }
+        .sidebar-nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+        .sidebar-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .sidebar-footer-text {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <img src="logo.svg" alt="Company Logo" class="sidebar-logo">
+        </header>
+        <nav>
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <img src="dashboard-icon.svg" alt="" class="sidebar-nav-icon">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <img src="analytics-icon.svg" alt="" class="sidebar-nav-icon">
+                        Analytics
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <img src="projects-icon.svg" alt="" class="sidebar-nav-icon">
+                        Projects
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <img src="tasks-icon.svg" alt="" class="sidebar-nav-icon">
+                        Tasks
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <img src="settings-icon.svg" alt="" class="sidebar-nav-icon">
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <footer class="sidebar-footer">
+            <p class="sidebar-footer-text">&copy; 2023 Company Name</p>
+        </footer>
+    </aside>
+</body>
+</html>

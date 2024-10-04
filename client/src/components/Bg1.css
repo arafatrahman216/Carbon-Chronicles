@@ -1,0 +1,124 @@
+.hero-section {
+    position: relative;
+    min-height: 1080px;
+    width: 100%;
+    padding-bottom: 30px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 4%;
+  }
+  
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .hero-content {
+    position: relative;
+    border-radius: 49px;
+    background-color: rgba(152, 93, 93, 0.33);
+    align-self: end;
+    display: flex;
+    width: 50%;
+    max-width: 100%;
+    flex-direction: column;
+    font-family: League Spartan, sans-serif;
+    margin-left: 40%;
+    margin-right: 10%;
+    margin-top: 0px;
+    padding: 38px 29px;
+  }
+
+  @media (max-width: 991px) {
+    .hero-content {
+      padding: 0 20px;
+    }
+  }
+  
+  .hero-title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  @media (max-width: 991px) {
+    .hero-title {
+      font-size: 40px;
+    }
+  }
+  
+  .hero-description {
+    font-size: 20px;
+    margin: 31px 18px 0 16px;
+  }
+  
+  .cta-button-1 {
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: rgba(87, 230, 144, 0.98);
+    overflow: hidden;
+    color: rgb(16, 22, 22);
+    white-space: nowrap;
+    letter-spacing: var(--Headline-Small-Tracking, 0px);
+    padding: 10px 12px;
+    font: var(--Headline-Medium-Size, 28px) / var(--Headline-Medium-Line-Height, 36px) var(--Headline-Medium-Font, Roboto);
+    border: 1px solid #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    .cta-button-1 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .feature-content {
+    position: relative;
+    border-radius: 49px;
+    background-color: rgba(152, 93, 93, 0.72);
+    display: flex;
+    width: 60%;
+    max-width: 100%;
+    flex-direction: column;
+    font-family: League Spartan, sans-serif;
+    margin: 182px 0 0 45px;
+    padding: 48px 38px;
+  }
+  
+  .feature-title {
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .feature-description {
+    font-size: 20px;
+    margin: 20px 10px 0 11px;
+  }
+  
+  .feature-button {
+    align-self: center;
+    border-radius: 8px;
+    background-color: rgba(87, 230, 144, 0.98);
+    margin-top: 45px;
+    min-height: 60px;
+    width: 261px;
+    max-width: 100%;
+    gap: 8px;
+    overflow: hidden;
+    color: black;
+    letter-spacing: var(--Headline-Small-Tracking, 0px);
+    padding: 12px;
+    font: var(--Headline-Medium-Size, 28px) / var(--Headline-Medium-Line-Height, 36px) var(--Headline-Medium-Font, Roboto);
+    border: 1px solid #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  
