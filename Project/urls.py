@@ -1,13 +1,19 @@
 import json
 import pickle
 import pandas as sp
-from . import prepfunc as pf
+import os
+import sys
+# from . import prepfunc as pf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import tensorflow as tf
+modulepath = os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))
+print(modulepath)
+if modulepath  not in sys.path:
+    sys.path.append(modulepath )
 with open('fitted_preprocessor.pkl', 'rb') as f:
     preprocessor = pickle.load(f)
 calc_model = tf.keras.models.load_model('carbon_emission.h5')
@@ -57,6 +63,8 @@ def calculate_co2(input_data):
     "Cooking_With"
     ])
     transformed_data = preprocessor.transform(data_df)
+    # print(transformed_data)
+    print(data_df)
     prediction = calc_model.predict(transformed_data)
 
     return prediction[0]
@@ -81,7 +89,7 @@ def get_data(request):
         data = {
             'message': 'This is a POST request',
             'data': json.loads(request.body),
-            'carbon_emission_result' : 1
+            'carbon_emission_result' : str(calculate_co2(json.loads(request.body))[0])
         }
         return JsonResponse(data)
     return JsonResponse({'message': 'This is a haha request'})

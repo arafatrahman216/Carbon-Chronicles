@@ -21,10 +21,10 @@ export default function App() {
           <Route path='/joinus' element={}/> */}
         </Routes>
       </div>
-      <h1>React Simple Maps Heatmap</h1>
+      {/* <h1>React Simple Maps Heatmap</h1>
       <HeatMap1 />
       <h1 className="App-header">React Simple Maps</h1>
-      <HeatMap2 />
+      <HeatMap2 /> */}
     </Router>
   );
 }
