@@ -1,11 +1,17 @@
-import React from 'react';
-import '../css/Home.css';
-
-export default function Home() {
+import React from 'react'
+import '../css/Spinner.css'
+export const Spinner = () => {
   return (
-    <>
-    <div class="spinner"></div>
+    <div>
+      <div class="spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-</>
+    </div>
   )
 }

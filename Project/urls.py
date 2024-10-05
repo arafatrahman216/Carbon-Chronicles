@@ -97,4 +97,7 @@ def get_data(request):
 
 urlpatterns += [
     path('get-data/', get_data, name='get_data'),
+    path('fetch-co2-data/', views.fetch_co2_data, name='fetch_co2_data'),
+    path('fetch-ch4-data/', views.fetch_ch4_data, name='fetch_ch4_data'),
+    path('fetch-emission-data/', views.filter_emissions_data , name='fetch_emission_data'),
 ]
