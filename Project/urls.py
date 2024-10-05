@@ -3,7 +3,9 @@ import pickle
 import os
 import sys
 import pandas as sp
-from . import prepfunc as pf
+import os
+import sys
+# from . import prepfunc as pf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
