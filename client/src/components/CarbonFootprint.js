@@ -118,13 +118,13 @@ const CarbonFootprint = () => {
                 </select>
             </label>
             <label>
-                Heating Energy Source: 
-                <select value={heatingEnergySource} onChange={(e) => setHeatingEnergySource(e.target.value)}>
+                Diet: 
+                <select value={diet} onChange={(e) => setDiet(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="electricity">Electricity</option>
-                    <option value="natural gas">Gas</option>
-                    <option value="wood">Wood</option>
-                    <option value="coal">Coal</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="omnivore">Omnivore</option>
+                    <option value="pescatarian">Pescatarian</option>
                 </select>
             </label>
             <label>
@@ -138,13 +138,13 @@ const CarbonFootprint = () => {
                 </select>
             </label>
             <label>
-                Diet: 
-                <select value={diet} onChange={(e) => setDiet(e.target.value)}>
+                Heating Energy Source: 
+                <select value={heatingEnergySource} onChange={(e) => setHeatingEnergySource(e.target.value)}>
                     <option value="">Select</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="omnivore">Omnivore</option>
-                    <option value="pescatarian">Pescatarian</option>
+                    <option value="electricity">Electricity</option>
+                    <option value="natural gas">Gas</option>
+                    <option value="wood">Wood</option>
+                    <option value="coal">Coal</option>
                 </select>
             </label>
             <label>
@@ -168,11 +168,6 @@ const CarbonFootprint = () => {
                     <option value="lpg">LPG</option>
                 </select>
             </label>
-            <label>
-                Vehicles Monthly Distance:
-                <input type="number" value={monthlyDistance} onChange={(e) => setMonthlyDistance(e.target.value)} />
-            </label>
-
 
             <label>
                 Social Activity:
@@ -188,15 +183,6 @@ const CarbonFootprint = () => {
                 <input type="number" value={monthlyGrocery} onChange={(e) => setMonthlyGrocery(e.target.value)} />
             </label>
             <label>
-                Waste Bag Size: 
-                <select value={wasteBagSize} onChange={(e) => setWasteBagSize(e.target.value)}>
-                    <option value="">Select</option>
-                    <option value="small">Small</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large</option>
-                </select>
-            </label>
-            <label>
                 Air Travel Frequency:
                 <select value={travelFrequency} onChange={(e) => setTravelFrequency(e.target.value)}>
                     <option value="">Select</option>
@@ -204,6 +190,19 @@ const CarbonFootprint = () => {
                     <option value="rarely">Rarely</option>
                     <option value="frequency">Frequently</option>
                     <option value="very frequently">Very Frequently</option>
+                </select>
+            </label>
+            <label>
+                Vehicles Monthly Distance:
+                <input type="number" value={monthlyDistance} onChange={(e) => setMonthlyDistance(e.target.value)} />
+            </label>
+            <label>
+                Waste Bag Size: 
+                <select value={wasteBagSize} onChange={(e) => setWasteBagSize(e.target.value)}>
+                    <option value="">Select</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
                 </select>
             </label>
             <label>
