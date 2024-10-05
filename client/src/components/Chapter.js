@@ -29,14 +29,14 @@ const Chapter = () => {
         setError(error.message);
         setLoading(false);
       }
-      try {
-        const responseASC = await axios.get('http://127.0.0.1:8000/fetch-ch4-data/');
-        setASCh4data(responseASC.data.data); // Assume this is the raw monthly data
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
+    //   try {
+    //     const responseASC = await axios.get('http://127.0.0.1:8000/fetch-ch4-data/');
+    //     setASCh4data(responseASC.data.data); // Assume this is the raw monthly data
+    //     setLoading(false);
+    //   } catch (error) {
+    //     setError(error.message);
+    //     setLoading(false);
+    //   }
       try {
         const response = await axios.get('http://127.0.0.1:8000/fetch-emission-data/');
         setYearData(response.data.year_avg); // Assume this is the raw monthly data
@@ -53,7 +53,8 @@ const Chapter = () => {
     fetchData();
   }, []);
 
-  if (loading) return <Spinner />;
+//   if (loading) return <Spinner />;
+  if (loading) return <h1>Loading</h1>;
   if (error) return <p>Error: {error}</p>;
 
 
@@ -90,9 +91,9 @@ const Chapter = () => {
     <div className="App">
       <h2>Yearly data showing average CO<sub>2</sub> (ppm) values in Ascension Island, United Kingdom (ASC) from 1979 to 2023 </h2>
       <CO2Chart data={ASCo2data} />
-      <h2> Yearly data showing average CH<sub>4</sub> (ppm) values in Ascension Island, United Kingdom (ASC) from 1983 to 2023
+      {/* <h2> Yearly data showing average CH<sub>4</sub> (ppm) values in Ascension Island, United Kingdom (ASC) from 1983 to 2023
        </h2>
-        <CO2Chart data={ASCh4data} />
+        <CO2Chart data={ASCh4data} /> */}
     
         <h2>
             Yearly data showing average CO<sub>2</sub> emissions (kt) from 1970 to 2021
